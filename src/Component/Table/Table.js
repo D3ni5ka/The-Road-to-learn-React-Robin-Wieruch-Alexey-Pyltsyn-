@@ -15,10 +15,10 @@ const smallColumn = {
     width: '10%',
 };
 
-function Table({ list, pattern, onDismiss }) {
+function Table({ list, onDismiss }) {
     return (
         <div className="table">
-            {list.filter(isSearched(pattern)).map(item => {
+            {list.map(item => {
 
                 return (
 
@@ -28,6 +28,7 @@ function Table({ list, pattern, onDismiss }) {
                         <span style={smallColumn}>{item.num_comments}</span>
                         <span style={smallColumn}>{item.points}</span>
                         <span style={smallColumn}>
+
                             <Button onClick={() =>
                                 onDismiss(item.objectID)}
                                 className="button-inline"
